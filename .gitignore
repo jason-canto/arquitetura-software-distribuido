@@ -1,0 +1,15 @@
+target/
+log/
+*/bin/*
+*.ear
+*.class
+
+**/node_modules/
+
+# Eclipse
+.settings/
+*.project
+*.classpath
+.prefs
+*.prefs
+.metadata/
