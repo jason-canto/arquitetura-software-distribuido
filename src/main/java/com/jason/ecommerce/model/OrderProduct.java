@@ -7,9 +7,13 @@ import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class OrderProduct {
 
@@ -19,10 +23,6 @@ public class OrderProduct {
 
 	@Column(nullable = false)
 	private Integer quantity;
-
-	public OrderProduct() {
-		super();
-	}
 
 	public OrderProduct(Order order, Product product, Integer quantity) {
 		pk = new OrderProductPK();
@@ -39,22 +39,6 @@ public class OrderProduct {
 	@Transient
 	public Double getTotalPrice() {
 		return getProduct().getPrice() * getQuantity();
-	}
-
-	public OrderProductPK getPk() {
-		return pk;
-	}
-
-	public void setPk(OrderProductPK pk) {
-		this.pk = pk;
-	}
-
-	public Integer getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
 	}
 
 	@Override
