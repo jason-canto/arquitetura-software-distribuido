@@ -1,5 +1,6 @@
 package com.jason.ecommerce.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "orders")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "orderProducts")
-public class Order {
+public class Order implements Serializable {
+
+	private static final long serialVersionUID = 576741977512165463L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

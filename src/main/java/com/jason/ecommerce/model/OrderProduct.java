@@ -1,5 +1,7 @@
 package com.jason.ecommerce.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -15,7 +17,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class OrderProduct {
+public class OrderProduct implements Serializable {
+
+	private static final long serialVersionUID = 3019865244595236646L;
 
 	@EmbeddedId
 	@JsonIgnore
